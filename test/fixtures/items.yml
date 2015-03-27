@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  price: 9.99
+  quantity_on_hand: 1
+  is_new: false
+  is_on_sale: false
+  is_upgrade: false
+  category: MyString
+
+two:
+  name: MyString
+  description: MyString
+  price: 9.99
+  quantity_on_hand: 1
+  is_new: false
+  is_on_sale: false
+  is_upgrade: false
+  category: MyString
