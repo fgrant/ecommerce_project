@@ -46,3 +46,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'coffee-script-source', '1.8.0'
 
 gem 'carrierwave'
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'mini_magick'

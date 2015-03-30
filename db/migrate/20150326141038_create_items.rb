@@ -7,7 +7,7 @@ class CreateItems < ActiveRecord::Migration
       t.integer :quantity_on_hand
       t.boolean :is_new
       t.boolean :is_on_sale
-      t.boolean :is_upgrade
+      t.boolean :is_updated
       t.string :category
 
       t.timestamps null: false

@@ -1,0 +1,15 @@
+<div class = "item">
+<h2><%= link_to item.name , item%></h2>
+<p><%= image_tag item.picture.medium.url %></p>
+<div><%= item.category %></div>
+<div><%= item.price %></div>
+
+
+<p>Price:<%= number_to_currency item.price %>
+
+<!--<p>
+  <%= link_to "Edit", edit_item_path(item) %>
+  <%= link_to "Delete", item, method: 'delete' %>-->
+  
+</p>
+</div>

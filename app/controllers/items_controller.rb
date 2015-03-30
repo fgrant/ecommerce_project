@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.order(:description)
+    @items = Item.all
     
   end
 
@@ -9,17 +9,50 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
-  end
+    @item = Item.new(item_params)
+    if (@item.save)
+      redirect_to@item
+    else
+      render :new
+  
+    end
+    
+      
+  
+    
+ 
+  
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+    @item = Item.find(params[:id])
+    if (@item.update_attributes(product_params))
+      redirect_to @item
+    else
+      render :edit
+    end
+  end
+    
+      
+  
+    
   end
 
   def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to root_path
+  end
+  
+  private
+  def product_params
+  params.require(:product).permit(:name, :category, :description, :price , :picture )
   end
 end
