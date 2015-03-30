@@ -1,11 +1,15 @@
 <div class = "item">
+
 <h2><%= link_to item.name , item%></h2>
-<p><%= image_tag item.picture.medium.url %></p>
-<div><%= item.category %></div>
-<div><%= item.price %></div>
+<div><%= image_tag item.picture.medium.url %></p>
 
-
-<p>Price:<%= number_to_currency item.price %>
+<div>Category:<%= item.category %></div>
+<div>Description:<%= item.description %></div>
+<div>Stock Level:<%=  item.quantity_on_hand %>
+<div>New Product:<%=  item.is_new %>
+<div>Sale Product:<%=  item.is_on_sale %>
+<div>Product has been updated:<%=  item.is_upgrade %>
+<div>Price:<%= number_to_currency item.price %>
 
 <!--<p>
   <%= link_to "Edit", edit_item_path(item) %>

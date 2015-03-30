@@ -12,8 +12,9 @@
 
 <% end %>
 </ul>-->
-<h2>The Items</h2>
-<p>Items size: <%= @items.size %></p>
+<h2>Our Products</h2>
+
 
 <%= render @items %>
-<p><%= link_to "New Item", new_item_path %></p>
+<p><%= link_to "New Item", new_item_path %></p
+<%= paginate @items %>
