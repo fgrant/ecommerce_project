@@ -1,4 +1,4 @@
-class ItemspurchasedControllerController < ApplicationController
+class ItemspurchasedController < ApplicationController
   
   
   

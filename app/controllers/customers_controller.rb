@@ -1,4 +1,4 @@
-class CustomerControllerController < ApplicationController
+class CustomerController < ApplicationController
   
   
   

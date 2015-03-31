@@ -24,14 +24,15 @@ Rails.application.routes.draw do
 
   get 'orders_controller/create'
 
- # get 'customer_controller/index'
+  get 'customers_controller/index'
 
-  get 'customer_controller/show'
+  get 'customers_controller/show'
 
-  get 'customer_controller/new'
+  get 'customers_controller/new'
 
-  get 'customer_controller/create'
-
+  get 'customers_controller/create'
+ 
+ #routes for items
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root  to: 'items#index'
@@ -49,11 +50,7 @@ Rails.application.routes.draw do
   delete 'items/:id' => 'items#destroy', as: 'delete_item', id: /\d+/
   
   
-  
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  #root  to: 'customers#index'
-  
+  #routes for customers
   get 'customers' => 'customers#index'
  
   get 'customers/:id' => 'customers#show' , as: 'customer' , id: /\d+/
@@ -67,10 +64,10 @@ Rails.application.routes.draw do
   delete 'customers/:id' => 'customers#destroy', as: 'delete_customer', id: /\d+/
   
   
-  #devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  root  to: 'orders#index'
   
+ 
+  
+  #routes for orders
   get 'orders' => 'orders#index'
  
   get 'orders/:id' => 'orders#show' , as: 'order' , id: /\d+/
@@ -83,11 +80,11 @@ Rails.application.routes.draw do
   
   delete 'orders/:id' => 'orders#destroy', as: 'delete_order', id: /\d+/
   
-  #devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  root  to: 'province#index'
+ 
   
-  get 'province' => 'provinces#index'
+  
+  #routes for provinces
+  get 'provinces' => 'provinces#index'
  
   get 'provinces/:id' => 'provinces#show' , as: 'province' , id: /\d+/
  
@@ -98,6 +95,23 @@ Rails.application.routes.draw do
   patch 'provinces/:id' => 'provinces#update', id:/\d+/
   
   delete 'provinces/:id' => 'provinces#destroy', as: 'delete_province', id: /\d+/
+  
+  
+
+  
+  
+  #routes for items purchased
+  get 'itemspurchased' => 'itemspurchased#index'
+ 
+  get 'itemspurchased/:id' => 'itemspurchased#show' , as: 'itempurchased' , id: /\d+/
+  get 'itemspurchased/new' => 'itemspurchased#new', as: 'new_itempurchased'  
+
+  post 'itemspurchased' => 'itemspurchased#create', as: 'create_itempurchased'
+  
+  get 'itemspurchased/:id/edit' => 'itemspurchased#edit', as: 'edit_itempurchased', id: /\d+/
+  patch 'itemspurchased/:id' => 'itemspurchased#update', id:/\d+/
+  
+  delete 'itemspurchased/:id' => 'itemspurchased#destroy', as: 'delete_itempurchased', id: /\d+/
   #get 'items/:id' => 'items#show' ,constraints: {id: /\d+/}, as: 'item'
   
  # get 'items/index'
