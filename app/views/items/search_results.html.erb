@@ -1,0 +1,9 @@
+<h2> Search Results</h2>
+
+<% if @items.empty? %>
+<p>
+   No results found for '<%= params[:keywords] %>' 
+</p>
+<% end %>
+
+<%= render @items %>

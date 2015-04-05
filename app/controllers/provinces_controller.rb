@@ -1,20 +1,64 @@
-class ProvinceControllerController < ApplicationController
+class ProvinceController < ApplicationController
  
   def index
     @provinces = Province.all
     
   end
 
+
+
+ 
+
+      
+  
+    
+ 
+  
+
+ 
+
+  
+    
+      
+  
+    
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to root_path
+  end
+  
+  
+  def search
+            
+    
+  end
+  
+  def search_results
+    @items = Item.where("name LIKE ?", "%#{params[:keywords]}%")
+  end
+  
+  
+ 
+
   def show
     @province = Province.find(params[:id])
   end
+  
+  
+
 
   def new
     @province = Province.new
   end
+  
+  
+  
 
   def create
-    @province = Province.new(item_params)
+    @province = Province.new(province_params)
     if (@province.save)
       redirect_to@province
     else
@@ -24,6 +68,7 @@ class ProvinceControllerController < ApplicationController
     
       
   
+  
     
  
   
@@ -31,6 +76,8 @@ class ProvinceControllerController < ApplicationController
   def edit
     @province = Province.find(params[:id])
   end
+  
+  
 
   def update
     @province = Province.find(params[:id])
@@ -40,6 +87,8 @@ class ProvinceControllerController < ApplicationController
       render :edit
     end
   end
+    
+    
     
       
   
@@ -57,3 +106,4 @@ class ProvinceControllerController < ApplicationController
   params.require(:province).permit(:prov_name, :pst_rate, :gst_rate, :hst_rate )
   end
 end
+ 

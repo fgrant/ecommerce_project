@@ -3,7 +3,7 @@
 <h2><%= link_to item.name , item%></h2>
 <div><%= image_tag item.picture.medium.url %></p>
 
-<div>Category:<%= item.category %></div>
+<div>Category:<%= item.category_id %></div>
 <div>Description:<%= item.description %></div>
 <div>Stock Level:<%=  item.quantity_on_hand %>
 <div>Price:<%= number_to_currency item.price %>

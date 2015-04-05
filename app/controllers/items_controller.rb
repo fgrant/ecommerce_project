@@ -54,8 +54,19 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
   
+  
+  def search
+            
+    
+  end
+  
+  def search_results
+    @items = Item.where("name LIKE ?", "%#{params[:keywords]}%")
+  end
+  
+  
   private
   def product_params
-  params.require(:product).permit(:name, :category, :description, :price , :picture )
+  params.require(:product).permit(:name, :category_id, :description, :price , :picture )
   end
 end

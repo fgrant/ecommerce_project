@@ -50,6 +50,14 @@ Rails.application.routes.draw do
   delete 'items/:id' => 'items#destroy', as: 'delete_item', id: /\d+/
   
   
+  #resources :items, :except => :show
+#root :to => "items#index", :via => :get
+#match 'items/:id' => 'items#show', :as => 'item', :via => :get
+
+#match 'search' => "items#search", :as => 'search', :via => :get
+#match 'search_results' => 'items#search_results', :as => 'search_results', :via => :post  
+  
+  
   #routes for customers
   get 'customers' => 'customers#index'
  
@@ -112,21 +120,21 @@ Rails.application.routes.draw do
   patch 'itemspurchased/:id' => 'itemspurchased#update', id:/\d+/
   
   delete 'itemspurchased/:id' => 'itemspurchased#destroy', as: 'delete_itempurchased', id: /\d+/
-  #get 'items/:id' => 'items#show' ,constraints: {id: /\d+/}, as: 'item'
+  # get 'items/:id' => 'items#show' ,constraints: {id: /\d+/}, as: 'item'
   
  # get 'items/index'
 
-  #get 'items/show'
+  # get 'items/show'
 
   #get 'items/new'
 
   #get 'items/create'
 
-  #get 'items/edit'
+  # get 'items/edit'
 
-  #get 'items/update'
+  # get 'items/update'
 
-  #get 'items/destroy'
+  # get 'items/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
