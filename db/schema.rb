@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20150405042100) do
     t.string   "status"
     t.decimal  "pst_rate"
     t.decimal  "gst_rate"
+    t.decimal "hst_rate"
     t.integer  "customer_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
