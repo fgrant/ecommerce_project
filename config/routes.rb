@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'category_controller/create'
+
+  get 'category_controller/index'
+
+  get 'category_controller/new'
+
+  get 'category_controller/show'
+
   get 'province_controller/index'
 
   get 'province_controller/show'
