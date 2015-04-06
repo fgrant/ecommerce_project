@@ -1,20 +1,4 @@
 class CategoryController< ApplicationController
-  def create
-  end
-
-  def index
-  end
-
-  def new
-  end
-
-  def show
-  end
-end
-
-
-  
-  
   
   def index
     @categories = Category.all
@@ -41,27 +25,10 @@ end
     
     
     
-    
-
-   
-  
-    
- 
-  
-
- 
-  
-    
-      
-  
-    
-  
-
- 
-  
-  private
+    private
   def category_params
   params.require(:category).permit(:name, :description )
   end
+end
 
 
