@@ -16,6 +16,16 @@ class CustomerController < ApplicationController
   def new
     @customer = Customer.new
   end
+  
+  def create
+    @province = Province.new(province_params)
+    if (@province.save)
+      redirect_to@province
+    else
+      render :new
+  
+    end
+  end
 
   def create
     @customer = Customer.new(customer_params)
@@ -26,7 +36,8 @@ class CustomerController < ApplicationController
   
     end
     
-      
+end
+  
   
     
  
@@ -48,7 +59,7 @@ class CustomerController < ApplicationController
       
   
     
-  end
+
 
   def destroy
     @customer = Customer.find(params[:id])
@@ -56,8 +67,8 @@ class CustomerController < ApplicationController
     redirect_to root_path
   end
   
+  
   private
   def customer_params
   params.require(:customer).permit(:f_name, :l_name, :address,  :city, :country, :postal_code, :email, :province_id, :outstanding_order )
   end
-end

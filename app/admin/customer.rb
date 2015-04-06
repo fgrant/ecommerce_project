@@ -6,7 +6,7 @@ ActiveAdmin.register Customer do
   #
   # permit_params :list, :of, :attributes, :on, :model
   #
-  ActiveAdmin.register Province do
+  #ActiveAdmin.register Province do
 
 
   # See permitted parameters documentation:
@@ -15,7 +15,6 @@ ActiveAdmin.register Customer do
   # permit_params :list, :of, :attributes, :on, :model
   #
    permit_params :f_name, :l_name, :address, :city, :country, :postal_code, :email, :province_id, :outstanding_order
-  # or
   #
   # permit_params do
   #   permitted = [:permitted, :attributes]
@@ -35,4 +34,4 @@ end
   # end
 
 
-end
+

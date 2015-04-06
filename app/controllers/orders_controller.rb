@@ -1,4 +1,4 @@
-class OrdersControllerController < ApplicationController
+class OrdersController < ApplicationController
   
   
   def index
@@ -22,8 +22,13 @@ class OrdersControllerController < ApplicationController
       render :new
   
     end
+  end
     
-      
+    
+    
+    
+
+   
   
     
  
@@ -45,7 +50,7 @@ class OrdersControllerController < ApplicationController
       
   
     
-  end
+  
 
   def destroy
     @order = Order.find(params[:id])
@@ -55,6 +60,6 @@ class OrdersControllerController < ApplicationController
   
   private
   def order_params
-  params.require(:order).permit(:status,:hst_rate :pst_rate, :gst_rate, :customer_id )
+  params.require(:order).permit(:status, :pst_rate, :gst_rate, hst_rate, :customer_id )
   end
-end
+

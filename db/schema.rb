@@ -77,24 +77,23 @@ ActiveRecord::Schema.define(version: 20150405042100) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string 'name'
-    t.string  'description'
-    t.decimal 'price'
-    t.integer 'quantity_on_hand"
-    t.boolean 'is_new
-    t.boolean 'is_on_sale'
-    t.boolean 'is_upgrade
-    t.datetime 'created_at',       null: false
-    t.datetime 'updated_at',       null: false
-    t.string   'picture'
-    t.integer  'category_id'
+    t.string   "name"
+    t.string   "description"
+    t.decimal  "price"
+    t.integer  "quantity_on_hand"
+    t.boolean  "is_new"
+    t.boolean  "is_on_sale"
+    t.boolean  "is_upgrade"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "picture"
+    t.integer  "category_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.string   "status"
     t.decimal  "pst_rate"
     t.decimal  "gst_rate"
-    t.decimal "hst_rate"
     t.integer  "customer_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
