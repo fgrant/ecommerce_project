@@ -1,4 +1,4 @@
-class CustomerController < ApplicationController
+class CustomersController < ApplicationController
   
   
   
@@ -71,4 +71,6 @@ end
   private
   def customer_params
   params.require(:customer).permit(:f_name, :l_name, :address,  :city, :country, :postal_code, :email, :province_id, :outstanding_order )
-  end
+end
+end
+

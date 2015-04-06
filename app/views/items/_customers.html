@@ -1,0 +1,16 @@
+<span id ="an_item">
+<div id = "name">
+  <br>
+<h2><%= link_to item.name , item%></h2></div>
+<div><%= image_tag item.picture.medium.url %>
+<div>Description:<%= item.description %></div>
+<div>Stock Level:<%=  item.quantity_on_hand %></div>
+<div>Price:<%= number_to_currency item.price %></div>
+
+<!--<p>
+  <%= link_to "Edit", edit_item_path(item) %>
+  <%= link_to "Delete", item, method: 'delete' %>-->
+  </br>
+
+</span>
+<br>

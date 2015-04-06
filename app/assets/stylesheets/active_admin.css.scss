@@ -15,3 +15,18 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+#container{
+    width: 1000px;
+    height:2100px;
+    border: 1px black solid;
+    border-radius: 25px;
+    
+   #an_item{
+    float:left
+   }
+    
+  
+}
+#title{
+    color: "red";
+}

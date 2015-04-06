@@ -59,6 +59,10 @@ Rails.application.routes.draw do
   
   
   #routes for customers
+  resource :items do
+    get "index"
+  end
+    
   get 'customers' => 'customers#index'
  
   get 'customers/:id' => 'customers#show' , as: 'customer' , id: /\d+/

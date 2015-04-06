@@ -1,10 +1,11 @@
 <%= form_for @item do |a_form| %>
-<div>
-<%= a_form.label :name %><br>
+
+<span>
+<%= a_form.label :name %>
 <%= a_form.text_field :name %>
-</div>
-<div>
-<%= a_form.label :description %><br>
+</span>
+<span>
+<%= a_form.label :description %>
 <%= a_form.text_field :description %>
-</div>
+</span>
 <% end %>

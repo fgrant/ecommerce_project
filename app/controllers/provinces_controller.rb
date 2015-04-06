@@ -22,11 +22,11 @@ class ProvinceController < ApplicationController
       
   
     
-  end
+
 
   def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
+    @province = Province.find(params[:id])
+    @province.destroy
     redirect_to root_path
   end
   
@@ -67,7 +67,7 @@ class ProvinceController < ApplicationController
     end
     
       
-  
+  end
   
     
  
@@ -93,7 +93,7 @@ class ProvinceController < ApplicationController
       
   
     
-  end
+
 
   def destroy
     @province = Province.find(params[:id])
@@ -105,5 +105,4 @@ class ProvinceController < ApplicationController
   def province_params
   params.require(:province).permit(:prov_name, :pst_rate, :gst_rate, :hst_rate )
   end
-end
  
