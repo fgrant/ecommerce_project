@@ -6,7 +6,7 @@ ActiveAdmin.register Order do
   #
   # permit_params :list, :of, :attributes, :on, :model
   #
-  ActiveAdmin.register Province do
+ # ActiveAdmin.register Province do
 
 
   # See permitted parameters documentation:
@@ -24,7 +24,6 @@ ActiveAdmin.register Order do
   # end
 
 
-end
 
   # or
   #
@@ -33,6 +32,5 @@ end
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
 
 end

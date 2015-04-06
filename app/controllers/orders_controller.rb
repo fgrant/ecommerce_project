@@ -60,6 +60,6 @@ class OrdersController < ApplicationController
   
   private
   def order_params
-  params.require(:order).permit(:status, :pst_rate, :gst_rate, hst_rate, :customer_id )
+  params.require(:order).permit(:status, :pst_rate, :gst_rate, :hst_rate, :customer_id )
   end
 
