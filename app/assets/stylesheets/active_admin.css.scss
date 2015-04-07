@@ -14,19 +14,42 @@
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
-//   .status_tag { background: #6090DB; }
+//   .status_tag { b
+
+$text_color:#A9A9A9;
+body{
+    background-image: url("paws.gif");
+    
+}
 #container{
     width: 1000px;
-    height:2100px;
+    height:  1200px;
     border: 1px black solid;
     border-radius: 25px;
-    
-   #an_item{
-    float:left
-   }
-    
+    background-color:#E8E8E8;
+    padding:5px;
+    margin-left:auto;
+    margin-right:auto;
+
+h1{
+    text-align:center;
+    font-family:arial;
+    font-size:80px;
+}
+
+#paginate{
+    position:absolute;
+    top: 1100px;
+    right: 500px;
+   
+
+} 
+
+}
+
+
+  h2{
+    text-align:center;
+    color: $text_color;
+  }
   
-}
-#title{
-    color: "red";
-}

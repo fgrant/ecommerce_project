@@ -1,12 +1,15 @@
 <span id ="an_item">
 
   
-<h2><%= link_to item.name , item%></h2>
-<div><%= image_tag item.picture.medium.url %>
-<div>Description:<%= item.description %></div>
-<div>Stock Level:<%=  item.quantity_on_hand %></div>
+<h2 id = "the_title"><%= link_to item.name , item%></h2>
+<%= image_tag item.picture.medium.url %>
+Description:<%= item.description %>
+</br>
+Stock Level:<%=  item.quantity_on_hand %>
+</br>
 Price:<%= number_to_currency item.price %>
-<div>Category:<%= item.category_id%></div>
+</br>
+<!--Category:<%= item.category_id%>-->
 <!--<p>
   <%= link_to "Edit", edit_item_path(item) %>
   <%= link_to "Delete", item, method: 'delete' %>-->

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406154716) do
+ActiveRecord::Schema.define(version: 20150405042100) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20150406154716) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "item_purchaseds", force: :cascade do |t|
+  create_table "items_purchased", force: :cascade do |t|
     t.integer  "quantity_bought"
     t.decimal  "price"
     t.integer  "item_id"
@@ -77,16 +77,16 @@ ActiveRecord::Schema.define(version: 20150406154716) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.decimal  "price"
-    t.integer  "quantity_on_hand"
-    t.boolean  "is_new"
-    t.boolean  "is_on_sale"
-    t.boolean  "is_upgrade"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "picture"
+    t.string 'name'
+    t.string  'description'
+    t.decimal 'price'
+    t.integer 'quantity_on_hand"
+    t.boolean 'is_new'
+    t.boolean 'is_on_sale'
+    t.boolean 'is_upgrade'
+    t.datetime 'created_at'       null: false
+    t.datetime 'updated_at'      null: false
+    t.string   'picture'
     t.integer  "category_id"
   end
 
@@ -94,10 +94,10 @@ ActiveRecord::Schema.define(version: 20150406154716) do
     t.string   "status"
     t.decimal  "pst_rate"
     t.decimal  "gst_rate"
+    t.decimal "hst_rate"
     t.integer  "customer_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.decimal  "hst_rate"
   end
 
   create_table "provinces", force: :cascade do |t|

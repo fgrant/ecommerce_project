@@ -5,3 +5,4 @@ class Item < ActiveRecord::Base
   has_many:item_purchased
   mount_uploader :picture,ItemPictureUploader
 end
+                    
