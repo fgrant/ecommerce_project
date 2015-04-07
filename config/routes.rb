@@ -88,8 +88,7 @@ Rails.application.routes.draw do
  
   
   #routes for orders
-  
-  resource :orders do
+   resource :orders do
     get "index"
   end
   get 'orders' => 'orders#index'
@@ -129,17 +128,21 @@ Rails.application.routes.draw do
   
   
   #routes for items purchased
-  get 'itemspurchased' => 'itemspurchased#index'
+  #routes for category
+  resource :items_purchased do
+    get "index"
+  end
+  get 'items_purchased' => 'items_purchased#index'
  
-  get 'itemspurchased/:id' => 'itemspurchased#show' , as: 'itempurchased' , id: /\d+/
-  get 'itemspurchased/new' => 'itemspurchased#new', as: 'new_itempurchased'  
+  get 'items_purchased/:id' => 'items_purchased#show' , as: 'item_purchased' , id: /\d+/
+  get 'items_purchased/new' => 'items_purchased#new', as: 'new_item_purchased'  
 
-  post 'itemspurchased' => 'itemspurchased#create', as: 'create_itempurchased'
+  post 'items_purchased' => 'items_purchased#create', as: 'create_item_purchased'
   
-  get 'itemspurchased/:id/edit' => 'itemspurchased#edit', as: 'edit_itempurchased', id: /\d+/
-  patch 'itemspurchased/:id' => 'itemspurchased#update', id:/\d+/
+  get 'items_purchased/:id/edit' => 'items_purchased#edit', as: 'edit_item_purchased', id: /\d+/
+  patch 'items_purchased/:id' => 'items_purchased#update', id:/\d+/
   
-  delete 'itemspurchased/:id' => 'itemspurchased#destroy', as: 'delete_itempurchased', id: /\d+/
+  delete 'items_purchased/:id' => 'items_purchased#destroy', as: 'delete_item_purchased', id: /\d+/
  
  
  
@@ -147,7 +150,7 @@ Rails.application.routes.draw do
  
  
   #routes for category
-  resource :items do
+  resource :categories do
     get "index"
   end
   get 'categories' => 'categories#index'
