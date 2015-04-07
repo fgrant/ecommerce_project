@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    if (@item.update_attributes(product_params))
+    if (@item.update_attributes(item_params))
       redirect_to @item
     else
       render :edit
@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
   
   
   private
-  def product_params
-  params.require(:product).permit(:name, :category_id, :description, :price , :picture )
+  def item_params
+  params.require(:item).permit(:name,  :description, :price, :quantity_on_hand, :is_new, :is_on_sale, :is_upgrade, :picture, :category_id)
   end
 end
