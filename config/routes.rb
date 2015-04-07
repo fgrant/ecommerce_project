@@ -16,13 +16,13 @@ Rails.application.routes.draw do
 
   get 'province_controller/create'
 
-  get 'itemspurchased_controller/index'
+  get 'items_purchased_controller/index'
 
-  get 'itemspurchased_controller/show'
+  get 'items_purchased_controller/show'
 
-  get 'itemspurchased_controller/new'
+  get 'items_purchased_controller/new'
 
-  get 'itemspurchased_controller/create'
+  get 'items_purchased_controller/create'
 
   get 'orders_controller/index'
 
@@ -88,6 +88,10 @@ Rails.application.routes.draw do
  
   
   #routes for orders
+  
+  resource :orders do
+    get "index"
+  end
   get 'orders' => 'orders#index'
  
   get 'orders/:id' => 'orders#show' , as: 'order' , id: /\d+/
@@ -104,6 +108,10 @@ Rails.application.routes.draw do
   
   
   #routes for provinces
+  resource :provinces do
+    get "index"
+  end
+
   get 'provinces' => 'provinces#index'
  
   get 'provinces/:id' => 'provinces#show' , as: 'province' , id: /\d+/
@@ -132,6 +140,31 @@ Rails.application.routes.draw do
   patch 'itemspurchased/:id' => 'itemspurchased#update', id:/\d+/
   
   delete 'itemspurchased/:id' => 'itemspurchased#destroy', as: 'delete_itempurchased', id: /\d+/
+ 
+ 
+ 
+ 
+ 
+ 
+  #routes for category
+  resource :items do
+    get "index"
+  end
+  get 'categories' => 'categories#index'
+ 
+  get 'categories/:id' => 'categories#show' , as: 'category' , id: /\d+/
+  get 'categories/new' => 'categories#new', as: 'new_category'  
+
+  post 'categories' => 'categories#create', as: 'create_category'
+  
+  get 'categories/:id/edit' => 'categories#edit', as: 'edit_category', id: /\d+/
+  patch 'categories/:id' => 'categories#update', id:/\d+/
+  
+  delete 'categories/:id' => 'categories#destroy', as: 'delete_category', id: /\d+/
+  
+  
+  
+  
   # get 'items/:id' => 'items#show' ,constraints: {id: /\d+/}, as: 'item'
   
  # get 'items/index'

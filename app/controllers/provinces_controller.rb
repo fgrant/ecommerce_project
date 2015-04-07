@@ -1,30 +1,10 @@
-class ProvinceController < ApplicationController
+class ProvincesController < ApplicationController
  
   def index
     @provinces = Province.all
     
   end
-
-
-
- 
-
-      
-  
-    
- 
-  
-
- 
-
-  
-    
-      
-  
-    
-
-
-  def destroy
+def destroy
     @province = Province.find(params[:id])
     @province.destroy
     redirect_to root_path
@@ -105,4 +85,5 @@ class ProvinceController < ApplicationController
   def province_params
   params.require(:province).permit(:prov_name, :pst_rate, :gst_rate, :hst_rate )
   end
+end
  
