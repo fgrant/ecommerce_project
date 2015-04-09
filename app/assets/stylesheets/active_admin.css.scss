@@ -16,9 +16,9 @@
 //
 //   .status_tag { b
 
-$text_color:#A9A9A9;
+$text_color:#003399;
 body{
-    background-image: url("paws.gif");
+    background-image: url("newprint.jpg");
     
 }
 #container{
@@ -26,15 +26,18 @@ body{
     height:  1200px;
     border: 1px black solid;
     border-radius: 25px;
-    background-color:#E8E8E8;
+    background-color:#F2F2F2;
+   
+    margin-top: 40px;
     padding:5px;
     margin-left:auto;
     margin-right:auto;
 
 h1{
     text-align:center;
-    font-family:arial;
+    font-family:times new roman;
     font-size:80px;
+    color: $text_color;
 }
 
 #paginate{
@@ -43,12 +46,27 @@ h1{
     right: 500px;
    
 
-} 
+}
+#catdog{
+    position:absolute;
+    top: 42px;
+    left:100px;
+    
+    background-color:#F2F2F2;
+    
+}
+#catanddog{
+     position:absolute;
+    top: 42px;
+    right:100px;
+    
+}
 
 }
 
 
   h2{
+    font-family:times new roman;
     text-align:center;
     color: $text_color;
   }

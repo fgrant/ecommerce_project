@@ -1,5 +1,25 @@
 Rails.application.routes.draw do
   
+  get 'store_controller/all_products'
+
+  get 'store_controller/contact'
+
+  get 'store_controller/about'
+
+  get 'store_controller/cats'
+
+  get 'store_controller/dogs'
+
+  get 'store_controller/small_animals'
+
+  get 'store_controller/birds'
+
+  get 'store_controller/sale'
+
+  get 'store_controller/new'
+
+  get 'store_controller/updated'
+
   get 'category_controller/create'
 
   get 'category_controller/index'

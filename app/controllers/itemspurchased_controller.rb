@@ -59,3 +59,5 @@ class ItemspurchasedController < ApplicationController
   params.require(:itempurchased).permit(:quantity_bought, :price, :item_id, :order_id)
   end
 end
+
+ 

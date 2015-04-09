@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+ 
   <title >The Pampered Pet</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
   <div id="container">
+   <div id = "catdog"> <%= image_tag "dogcat.jpg" %> </div>
    
  <h1>The Pampered Pet</h1>
+ <div id = "catanddog"> <%= image_tag "dogcat.jpg" %> </div>
 
 <%= yield %>
   </div>
