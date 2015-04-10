@@ -1,22 +1,52 @@
-<!DOCTYPE html>
+<DOCTYPE! html >
 <html>
 <head>
  
-  <title >The Pampered Pet</title>
+  <title> The Pampered Pet</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
   
+</head>
+
+<body>
   <div id="container">
-   <div id = "catdog"> <%= image_tag "dogcat.jpg" %> </div>
+  <!-- <div id = "catdog"> <%= image_tag "dogcat.jpg" %> </div>-->
+ <h1>The Pampered Pet</h1>
+ 
+ 
+<header>
+  <nav>
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'Cats', cats_path %></li>
+      <li><%= link_to 'Dogs', dogs_path %></li>
+      <li><%= link_to 'Birds', birds_path %></li>
+      <li><%= link_to 'Small Animals', small_animals_path %></li>
+      <li><%= link_to 'On Sale', sale_path %></li>
+      <li><%= link_to 'New Products', new_path %></li>
+    </ul>
+  </nav>
+</header>
+     
+    </ul>
+  </nav>
+</header>
+      <div id="container">
+  <!-- <div id = "catdog"> <%= image_tag "dogcat.jpg" %> </div>
    
  <h1>The Pampered Pet</h1>
- <div id = "catanddog"> <%= image_tag "dogcat.jpg" %> </div>
-
+ <div id = "catanddog"> <%= image_tag "dogcat.jpg" %> </div> -->
 <%= yield %>
+
   </div>
 
 </body>
 </html>
+
+
+
+    
+
+
+ 

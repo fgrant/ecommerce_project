@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
  
   def index
     @items = Item.all
-    @items = Item.order("name").page(params[:page]).per(5)
+   @items = Item.order("name").page(params[:page]).per(6)
   
     
   end
@@ -67,6 +67,6 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-  params.require(:item).permit(:name,  :description, :price, :quantity_on_hand, :is_new, :is_on_sale, :is_upgrade, :picture, :category_id)
+  params.require(:item).permit(:name,  :description, :price, :quantity_on_hand, :is_new, :is_on_sale, :is_updated, :picture, :category_id)
   end
 end

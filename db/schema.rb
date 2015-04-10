@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20150405042100) do
     t.integer 'quantity_on_hand"
     t.boolean 'is_new'
     t.boolean 'is_on_sale'
-    t.boolean 'is_upgrade'
+    t.boolean 'is_updated'
     t.datetime 'created_at'       null: false
     t.datetime 'updated_at'      null: false
     t.string   'picture'

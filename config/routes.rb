@@ -59,18 +59,42 @@ Rails.application.routes.draw do
   get 'customers_controller/new'
 
   get 'customers_controller/create'
+ # get 'items/index'
+
+  #get 'items/show'
+
+  #get 'items/new'
+
+  #get 'items/create'
  
- #routes for items
+#root to: 'store#index'
+get 'cats', to: 'store#cats'
+get 'dogs', to: 'store#dogs'
+get 'birds', to: 'store#birds'
+get 'small_animals', to: 'store#small_animals'
+get 'sale', to: 'store#sale'
+get 'new', to: 'store#new'
+
+
+
+resources :items
+ 
+ #routes for activeadmin
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root  to: 'items#index'
+  resources:items
+    #routes for customers
+  resource :items do
+    get "index"
+ #end
   
   get 'items' => 'items#index'
  
   get 'items/:id' => 'items#show' , as: 'item' , id: /\d+/
  
   get 'items/new' => 'items#new', as: 'new_item'  
-  post 'items' => 'items#create', as: 'create_item'
+ post 'items' => 'items#create', as: 'create_item'
   
   get 'items/:id/edit' => 'items#edit', as: 'edit_item', id: /\d+/
   patch 'items/:id' => 'items#update', id:/\d+/
@@ -87,7 +111,7 @@ Rails.application.routes.draw do
   
   
   #routes for customers
-  resource :items do
+  resource :customers do
     get "index"
   end
     
@@ -258,4 +282,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+end
 end

@@ -44,11 +44,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'coffee-script-source', '1.8.0'
-
-gem 'carrierwave'
+gem 'slim'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'rubocop'
 gem 'country_select'
+gem 'carrierwave'
