@@ -1,2 +1,15 @@
-<h1>StoreController#updated</h1>
-<p>Find me in app/views/store_controller/updated.html.erb</p>
+
+<h1>Updated Products</h1>
+<header>
+  <nav>
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'Cats', cats_path %></li>
+      <li><%= link_to 'Small Animals', small_animals_path %></li>
+      <li><%= link_to 'On Sale', sale_path %></li>
+     
+    </ul>
+  </nav>
+</header>
+<%= render @items %>
+<li><%= link_to 'Updated Products', updated_path %></li>

@@ -75,6 +75,9 @@ get 'small_animals', to: 'store#small_animals'
 get 'sale', to: 'store#sale'
 get 'new', to: 'store#new'
 
+#search routes
+match 'search_items' => 'store#search_items', :as => 'search_items', :via => :get
+match 'found_items' => 'store#found_items', :as => 'found_items', :via => :post
 
 
 resources :items

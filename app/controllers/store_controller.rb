@@ -42,4 +42,12 @@ class StoreController < ApplicationController
   def updated
     @items = Item.where('is_upgrade = ?'. true)
   end
+  
+  def search_items
+  end
+  
+  def found_items
+    @items = Item.where(:name =>params[:search_words])
+    
+  end
 end
