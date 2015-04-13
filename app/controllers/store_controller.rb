@@ -36,18 +36,22 @@ class StoreController < ApplicationController
   end
 
   def new
-     @items = Item.where('is_new = ?', true)
+     @items = Item.where('is_new = ? ' ,true)
   end
 
   def updated
-    @items = Item.where('is_upgrade = ?'. true)
+    @items = Item.where('is_upgrade = ?', true)
   end
   
   def search_items
   end
   
   def found_items
-    @items = Item.where(:name =>params[:search_words])
-    
+   @items = Item.where("name LIKE ?" ,'%' + params[:search_words] + '%').where("category_id LIKE ?", params[:category_id]) 
+                    
   end
+  
+  def found_all_items
+   @items = Item.where("name LIKE ?" ,'%' + params[:search_words] + '%')
+  end                  
 end

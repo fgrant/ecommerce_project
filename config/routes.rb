@@ -78,7 +78,7 @@ get 'new', to: 'store#new'
 #search routes
 match 'search_items' => 'store#search_items', :as => 'search_items', :via => :get
 match 'found_items' => 'store#found_items', :as => 'found_items', :via => :post
-
+match 'found_all_items' => 'store#found_all_items', :as => 'found_all_items', :via => :post
 
 resources :items
  
