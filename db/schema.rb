@@ -11,102 +11,109 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405042100) do
-
-  create_table "active_admin_comments", force: :cascade do |t|
-    t.string   "namespace"
-    t.text     "body"
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+ActiveRecord::Schema.define(version: 20_150_413_160_202) do
+  create_table 'active_admin_comments', force: :cascade do |t|
+    t.string 'namespace'
+    t.text 'body'
+    t.string 'resource_id',   null: false
+    t.string 'resource_type', null: false
+    t.integer 'author_id'
+    t.string 'author_type'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  add_index 'active_admin_comments', %w(author_type author_id), name: 'index_active_admin_comments_on_author_type_and_author_id'
+  add_index 'active_admin_comments', ['namespace'], name: 'index_active_admin_comments_on_namespace'
+  add_index 'active_admin_comments', %w(resource_type resource_id), name: 'index_active_admin_comments_on_resource_type_and_resource_id'
 
-  create_table "admin_users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'admin_users', force: :cascade do |t|
+    t.string 'email',                  default: '', null: false
+    t.string 'encrypted_password',     default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.integer 'sign_in_count',          default: 0,  null: false
+    t.datetime 'current_sign_in_at'
+    t.datetime 'last_sign_in_at'
+    t.string 'current_sign_in_ip'
+    t.string 'last_sign_in_ip'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  add_index 'admin_users', ['email'], name: 'index_admin_users_on_email', unique: true
+  add_index 'admin_users', ['reset_password_token'], name: 'index_admin_users_on_reset_password_token', unique: true
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string   "f_name"
-    t.string   "l_name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "country"
-    t.string   "postal_code"
-    t.string   "email"
-    t.integer  "province_id"
-    t.boolean  "outstanding_order"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  create_table "items_purchased", force: :cascade do |t|
-    t.integer  "quantity_bought"
-    t.decimal  "price"
-    t.integer  "item_id"
-    t.integer  "order_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "items", force: :cascade do |t|
+  create_table 'categories', force: :cascade do |t|
     t.string 'name'
-    t.string  'description'
+    t.string 'description'
+    t.datetime 'created_at',  null: false
+    t.datetime 'updated_at',  null: false
+  end
+
+  create_table 'contacts', force: :cascade do |t|
+    t.string 'phone'
+    t.string 'address'
+    t.string 'email'
+    t.string 'web'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  create_table 'customers', force: :cascade do |t|
+    t.string 'f_name'
+    t.string 'l_name'
+    t.string 'address'
+    t.string 'city'
+    t.string 'country'
+    t.string 'postal_code'
+    t.string 'email'
+    t.integer 'province_id'
+    t.boolean 'outstanding_order'
+    t.datetime 'created_at',        null: false
+    t.datetime 'updated_at',        null: false
+  end
+
+  create_table 'item_purchaseds', force: :cascade do |t|
+    t.integer 'quantity_bought'
     t.decimal 'price'
-    t.integer 'quantity_on_hand"
+    t.integer 'item_id'
+    t.integer 'order_id'
+    t.datetime 'created_at',      null: false
+    t.datetime 'updated_at',      null: false
+  end
+
+  create_table 'items', force: :cascade do |t|
+    t.string 'name'
+    t.string 'description'
+    t.decimal 'price'
+    t.integer 'quantity_on_hand'
     t.boolean 'is_new'
     t.boolean 'is_on_sale'
-    t.boolean 'is_updated'
-    t.datetime 'created_at'       null: false
-    t.datetime 'updated_at'      null: false
-    t.string   'picture'
-    t.integer  "category_id"
+    t.boolean 'is_upgrade'
+    t.datetime 'created_at',       null: false
+    t.datetime 'updated_at',       null: false
+    t.string 'picture'
+    t.integer 'category_id'
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string   "status"
-    t.decimal  "pst_rate"
-    t.decimal  "gst_rate"
-    t.decimal "hst_rate"
-    t.integer  "customer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table 'orders', force: :cascade do |t|
+    t.string 'status'
+    t.decimal 'pst_rate'
+    t.decimal 'gst_rate'
+    t.integer 'customer_id'
+    t.datetime 'created_at',  null: false
+    t.datetime 'updated_at',  null: false
+    t.decimal 'hst_rate'
   end
 
-  create_table "provinces", force: :cascade do |t|
-    t.string   "prov_name"
-    t.decimal  "pst_rate"
-    t.decimal  "gst_rate"
-    t.decimal  "hst_rate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'provinces', force: :cascade do |t|
+    t.string 'prov_name'
+    t.decimal 'pst_rate'
+    t.decimal 'gst_rate'
+    t.decimal 'hst_rate'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

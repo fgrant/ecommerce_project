@@ -1,12 +1,10 @@
 ActiveAdmin.register Province do
-
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # permit_params :list, :of, :attributes, :on, :model
   #
-   permit_params :prov_name, :gst_rate, :hst_rate ,:pst_rate
+  permit_params :prov_name, :gst_rate, :hst_rate, :pst_rate
   # or
   #
   # permit_params do
@@ -14,6 +12,4 @@ ActiveAdmin.register Province do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
-
 end

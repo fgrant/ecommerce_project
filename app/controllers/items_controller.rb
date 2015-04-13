@@ -1,85 +1,66 @@
 class ItemsController < ApplicationController
- 
-#  def index
- #   @items = Item.all
+  #  def index
+  #   @items = Item.all
   # @items = Item.order("name").page(params[:page]).per(6)
-  
-    
-  #end
 
-  #def show
-   # @item = Item.find(params[:id])
-  #end
+  # end
 
-  #$def new
-   # @item = Item.new
-  #end
+  # def show
+  # @item = Item.find(params[:id])
+  # end
 
-  #def create
+  # $def new
+  # @item = Item.new
+  # end
+
+  # def create
   #  @item = Item.new(item_params)
-   # if (@item.save)
-   #   redirect_to@item
-   # else
-    #  render :new
-    #end
-  
-    
-  #end
-    
-    
-      
-  
-    
- 
-  
+  # if (@item.save)
+  #   redirect_to@item
+  # else
+  #  render :new
+  # end
 
-  #def edit
-   # @item = Item.find(params[:id])
-  #end
+  # end
 
-  #def update
+  # def edit
+  # @item = Item.find(params[:id])
+  # end
+
+  # def update
   #  @item = Item.find(params[:id])
-   # if (@item.update_attributes(item_params))
-    #  redirect_to @item
-    #else
-    #  render :edit
-    
-  #end
-    
-  
-  
-    
- # end
+  # if (@item.update_attributes(item_params))
+  #  redirect_to @item
+  # else
+  #  render :edit
 
- # def destroy
+  # end
+
+  # end
+
+  # def destroy
   #  @item = Item.find(params[:id])
   #  @item.destroy
   #  redirect_to root_path
-  #end
-  
+  # end
 
-  
-  #def search
-            
-    
-  #end
-  
-  #def search_results
+  # def search
+
+  # end
+
+  # def search_results
   #  @items = Item.where("name LIKE ?", "%#{params[:keywords]}%")
- # end
-  
-  
- # private
- # def item_params
- # params.require(:item).permit(:name,  :description, :price, :quantity_on_hand, :is_new, :is_on_sale, :is_updated, :picture, :category_id)
- # end
-#end
+  # end
+
+  # private
+  # def item_params
+  # params.require(:item).permit(:name,  :description, :price, :quantity_on_hand, :is_new, :is_on_sale, :is_updated, :picture, :category_id)
+  # end
+  # end
 
   def index
     @items = Item.all
-   @items = Item.order("name").page(params[:page]).per(6)
-  
-    
+    @items = Item.order('name').page(params[:page]).per(6)
   end
 
   def show
@@ -92,35 +73,25 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if (@item.save)
-      redirect_to@item
-    else
-      render :new
-  
-    end
-    
-      
-  
-    
- 
-  
-
-  def edit
-    @item = Item.find(params[:id])
-  end
-
-  def update
-    @item = Item.find(params[:id])
-    if (@item.update_attributes(item_params))
+    if @item.save
       redirect_to @item
     else
-      render :edit
+      render :new
+
     end
-  end
-    
-      
-  
-    
+
+    def edit
+      @item = Item.find(params[:id])
+    end
+
+    def update
+      @item = Item.find(params[:id])
+      if @item.update_attributes(item_params)
+        redirect_to @item
+      else
+        render :edit
+      end
+    end
   end
 
   def destroy
@@ -128,20 +99,17 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to root_path
   end
-  
-  
+
   def search
-            
-    
   end
-  
+
   def search_results
-   # @items = Item.where("name LIKE ?", "%#{params[:keywords]}%")
+    # @items = Item.where("name LIKE ?", "%#{params[:keywords]}%")
   end
-  
-  
+
   private
+
   def item_params
-  params.require(:item).permit(:name,  :description, :price, :quantity_on_hand, :is_new, :is_on_sale, :is_updated, :picture, :category_id)
+    params.require(:item).permit(:name,  :description, :price, :quantity_on_hand, :is_new, :is_on_sale, :is_updated, :picture, :category_id)
   end
 end
