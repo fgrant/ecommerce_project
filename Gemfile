@@ -53,4 +53,6 @@ gem 'country_select'
 gem 'carrierwave'
 group :development do
   gem 'better_errors'
+  gem 'formtastic', '~> 3.0'
+
 end

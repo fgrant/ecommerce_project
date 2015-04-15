@@ -18,8 +18,22 @@
 
 $text_color:#003399;
 body{
-    background-image: url("newprint.jpg");
+   // background-image: url("newprint.jpg");
     
+}
+
+#category_search{
+    float:right;
+    position:absolute;
+    top: 42px;
+    left:900px;
+}
+
+#search{
+    float:right;
+    position:absolute;
+    top: 180px;
+    left:900px;
 }
 #container{
     width: 1000px;
@@ -34,7 +48,7 @@ body{
     margin-right:auto;
 
 h1{
-    text-align:center;
+    text-align:left;
     font-family:times new roman;
     font-size:80px;
     color: $text_color;
@@ -42,7 +56,7 @@ h1{
 
 #paginate{
     position:absolute;
-    top: 1100px;
+    top: 1400px;
     right: 500px;
    
 

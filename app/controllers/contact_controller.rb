@@ -1,13 +1,25 @@
 class ContactController < ApplicationController
-  def index
-  end
+  
+    
+   def index
+    @contact= Contact.all
+   end
 
   def show
+    @contact= Contact.find(params[:id])
   end
 
-  private
 
-  def item_params
-    params.require(:contact).permit(:email,  :web, :phone, :address)
+  
+  
+  
+
+  
+  
+  
+  
+  private
+  def contact_params
+  params.require(:contact).permit(:email,  :web, :phone, :address)
   end
 end

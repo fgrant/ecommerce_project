@@ -255,6 +255,7 @@ DEPENDENCIES
   coffee-script-source (= 1.8.0)
   country_select
   devise
+  formtastic (~> 3.0)
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
