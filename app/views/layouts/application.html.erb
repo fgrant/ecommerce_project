@@ -19,16 +19,19 @@
    
    
  <header> 
-   <nav> 
+   <nav>
+    <div id = "links">
      <ul> 
-       <li><%= link_to 'Home', root_path %></li> 
+       <li><a><%= link_to 'Home', root_path %>,</a></li> 
        <li><%= link_to 'Cats', cats_path %></li> 
        <li><%= link_to 'Dogs', dogs_path %></li> 
        <li><%= link_to 'Birds', birds_path %></li> 
        <li><%= link_to 'Small Animals', small_animals_path %></li> 
        <li><%= link_to 'On Sale', sale_path %></li> 
-       <li><%= link_to 'New Products', new_path %></li> 
-     </ul> 
+       <li><%= link_to 'New Products', new_path %></li>
+       <li><%= link_to 'About', about_path %></li> 
+       <li><%= link_to 'Contact', contact_path %></li> 
+    </div>
    </nav>
    <div id = "category_search" >
    <p>Search For Products By Category</p>
@@ -47,13 +50,17 @@
   <%= submit_tag 'Search' %>
 <% end %>
 </div>
+</br>
+</br>
+</br>
+</br>
 
  
- </header> 
+ <!--</header> 
        
      </ul> 
    </nav> 
- </header> 
+ </header> -->
      <!--  <div id="container"> -->
    <!-- <div id = "catdog"> <%= image_tag "dogcat.jpg" %> </div> 
      

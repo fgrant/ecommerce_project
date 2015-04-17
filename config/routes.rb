@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'contact/index'
 
   get 'contact/show'
@@ -85,6 +86,8 @@ Rails.application.routes.draw do
   get 'small_animals', to: 'store#small_animals'
   get 'sale', to: 'store#sale'
   get 'new', to: 'store#new'
+  get 'about', to: 'store#about'
+  get 'contact', to: 'store#contact'
 
   # search routes
   match 'search_items' => 'store#search_items', :as => 'search_items', :via => :get
@@ -277,3 +280,15 @@ Rails.application.routes.draw do
     #   end
   end
 end
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,2 +1,10 @@
-<h1>StoreController#about</h1>
-<p>Find me in app/views/store_controller/about.html.erb</p>
+<p> Here</p>
+
+
+
+<% if @actions.blank? %>
+  <h1>blank</h1>
+  <%else %>
+<%= render @about %>
+<% end %>
+

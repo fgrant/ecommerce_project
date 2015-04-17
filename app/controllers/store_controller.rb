@@ -7,10 +7,17 @@ class StoreController < ApplicationController
     @items = Item.all
   end
 
+
+  def all_abouts
+    @abouts = About.all
+  end
+  
   def contact
+    @contacts = Contact.all
   end
 
   def about
+    @abouts = About.all
   end
 
   def cats
@@ -45,10 +52,21 @@ class StoreController < ApplicationController
   end
 
   def found_items
-    @items = Item.where('name LIKE ?', '%' + params[:search_words] + '%').where('category_id LIKE ?', params[:category_id]).order(name: :asc)
+   # if params[:category_id] = "0" then
+     #@items = Item.where('name LIKE ?', '%' + params[:search_words] + '%')
+    
+ # else
+  #
+  @items = Item.where('name LIKE ?', '%' + params[:search_words] + '%').where('category_id LIKE ? ', params[:category_id]).order(name: :asc)
+     
+    
+      
+  #  end
+      
   end
 
   def found_all_items
     @items = Item.where('name LIKE ?', '%' + params[:search_words] + '%').order(name: :asc)
+   
   end
 end

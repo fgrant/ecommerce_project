@@ -1,2 +1,11 @@
 <p>Here are the products you are looking for:</p>
+<% if @items.size.zero? %>
+<p>
+   No products found. 
+</p>
+<% end %>
+
+
+
+
 <%= render @items %>
