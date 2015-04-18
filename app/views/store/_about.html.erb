@@ -1,13 +1,20 @@
 <span id ="about">
 
   
-<h1>HERE</h1>
 
-<%= about.title %>
+
+<div id = "contact_and_about"
+
+<% @new_arr = @abouts.to_ary %>
 </br>
-<%=  about.about_text %>
+<%  @new_arr.each do |value|%>
+<%= value.title %>
+</br>
+<%= value.about_text %>
+<% end %>
+</br>
 
-  
+</div>  
   
 </span>
 

@@ -1,17 +1,21 @@
 class AboutController < ApplicationController
   
     
+  attr_accessor :title
+  attr_accessor :about_text
   
-  
+  def get_title
+    @title =  about.title
+  end
 
   def index
-    @abouts = About.all
-    
+    #@abouts = About.all
+    @about = About.first
     
   end
 
   def show
-    @about =About.find(params[:id])
+    @about = About.find(params[:id])
   end
 
   def new
@@ -26,6 +30,7 @@ class AboutController < ApplicationController
       render :new
 
     end
+  
   
   
   

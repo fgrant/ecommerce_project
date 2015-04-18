@@ -1,23 +1,29 @@
 class StoreController < ApplicationController
   def index
     @items = Item.all
+    flash[:notice] = "The sale ends this weekend"
+  redirect_to @post
   end
 
   def all_products
     @items = Item.all
   end
-
-
-  def all_abouts
-    @abouts = About.all
+  def show
   end
+  
+
+  #def all_abouts
+   # @abouts = About.all
+   #@about.first
+  #end
   
   def contact
     @contacts = Contact.all
   end
 
   def about
-    @abouts = About.all
+   @abouts = About.all
+  #@about = About.first
   end
 
   def cats
@@ -38,6 +44,7 @@ class StoreController < ApplicationController
 
   def sale
     @items = Item.where('is_on_sale = ?', true).order(name: :asc)
+    
   end
 
   def new

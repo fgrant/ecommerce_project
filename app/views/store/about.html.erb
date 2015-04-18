@@ -1,10 +1,15 @@
-<p> Here</p>
 
 
 
-<% if @actions.blank? %>
+
+
+<% if @abouts.blank? %>
   <h1>blank</h1>
+  
   <%else %>
-<%= render @about %>
+    
+
+<%=render partial: "about" %>
+<h1>heree</h1>
 <% end %>
 

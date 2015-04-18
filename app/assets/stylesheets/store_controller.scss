@@ -1,3 +1,36 @@
 // Place all the styles related to the store_controller controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#links ul{
+   
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    
+   
+}
+
+
+
+#links li{
+    
+        float:left;
+    }
+
+
+#links a:link{
+    display:block;
+    //width: 100px;
+    text-align: center;
+    font-size: 15px;
+   // padding: 10px;
+//    
+   // color:#98BF21;
+   // background-color: #7A991A;
+}
+#links a:hover{
+   // background-color: #7A991A;
+}
+ 

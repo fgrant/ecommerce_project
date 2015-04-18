@@ -1,1 +1,17 @@
-<%= render @contacts %>
+
+
+
+
+
+<% if @contacts.blank? %>
+  <h1>blank</h1>
+  
+  <%else %>
+    
+
+<%=render partial: "contact" %>
+
+<% end %>
+
+
+
