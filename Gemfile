@@ -57,4 +57,17 @@ group :development do
 gem 'better_errors'
 gem 'formtastic', '~> 3.0'
 
+
+#group :production do
+#  gem 'pg',             '0.17.1'
+#  gem 'rails_12factor', '0.0.2'
+#end
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+  gem 'rails-12factor'
+end
+
 end
