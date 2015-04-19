@@ -28,6 +28,13 @@ class StoreController < ApplicationController
     redirect_to :back
   end
   
+   def remove_from_cart
+    session[:items_bought].delete(params[:id].to_i)
+    redirect_to :back
+  end
+  
+
+  
   def clear_cart
     session[:items_bought] = nil
     redirect_to :back 

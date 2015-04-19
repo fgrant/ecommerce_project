@@ -1,6 +1,11 @@
 <span id ="an_item">
 
  <%= link_to 'add to cart', add_to_cart_path(item), method: :post %> 
+
+<% if products_to_add.include?(item) %>
+  <%= link_to 'remove from cart', remove_from_cart_path(item), method: :delete %>
+<% end %>
+
 <h2 id = "the_title"><%= link_to item.name , item%></h2>
 <%= image_tag item.picture.medium.url %></br>
 Description:<%= item.description %>
