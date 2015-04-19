@@ -1,4 +1,4 @@
-c0
+#top-level class
 
 
 

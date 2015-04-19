@@ -1,3 +1,4 @@
+#about controller test class
 require 'test_helper'
 
 class AboutControllerTest < ActionController::TestCase

@@ -1,3 +1,4 @@
+#top-level class
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all

@@ -1,3 +1,4 @@
+#top-level class
 class ItemspurchasedController < ApplicationController
   def index
     @itemspurchased = ItemPurchased.all

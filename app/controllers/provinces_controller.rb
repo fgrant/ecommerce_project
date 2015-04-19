@@ -1,3 +1,4 @@
+#top-level class
 class ProvincesController < ApplicationController
   def index
     @provinces = Province.all

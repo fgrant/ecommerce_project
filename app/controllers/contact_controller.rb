@@ -1,5 +1,5 @@
+#top-level class
 class ContactController < ApplicationController
-  
     
    def index
     @contact= Contact.all

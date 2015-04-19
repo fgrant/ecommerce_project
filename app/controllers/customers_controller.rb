@@ -1,3 +1,4 @@
+#top-level class
 class CustomersController < ApplicationController
   def index
     @customers = Customer.all
