@@ -71,8 +71,8 @@ Rails.application.routes.draw do
   get 'customers_controller/new'
 
   get 'customers_controller/create'
-  # get 'items/index'
-
+  
+  
   # get 'items/show'
 
   # get 'items/new'
@@ -88,7 +88,10 @@ Rails.application.routes.draw do
   get 'new', to: 'store#new'
   get 'about', to: 'store#about'
   get 'contact', to: 'store#contact'
-
+  
+  post "add_to_cart/:id", to: 'store#add_to_cart', :as => 'add_to_cart'
+  delete "remove_from_cart/:id", to: 'store#remove_from_cart', :as => 'remove_from_cart'
+  post "clear_cart", to: "store#clear_cart", :as => 'clear_cart'
   # search routes
   match 'search_items' => 'store#search_items', :as => 'search_items', :via => :get
   match 'found_items' => 'store#found_items', :as => 'found_items', :via => :post

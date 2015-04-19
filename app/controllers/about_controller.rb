@@ -1,8 +1,8 @@
 class AboutController < ApplicationController
   
     
-  attr_accessor :title
-  attr_accessor :about_text
+  #attr_accessor :title
+  #attr_accessor :about_text
   
   def get_title
     @title =  about.title

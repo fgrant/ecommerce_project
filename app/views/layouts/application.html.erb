@@ -33,6 +33,8 @@
        <li><%= link_to 'Contact', contact_path %></li> 
     </div>
    </nav>
+   <%= link_to 'Clear Cart', clear_cart_path ,method: :post%>
+   
    <div id = "category_search" >
    <p>Search For Products By Category</p>
    <%= form_tag found_items_path do %>
@@ -55,6 +57,17 @@
 </br>
 </br>
 
+<div id="purchases">
+  <% products_to_add.each do |a_product|  %>
+  <%= a_product.name %>
+  </br>
+  <%= number_to_currency a_product.price %>
+  </br>
+<% end %>
+</div>
+
+ <!--<%= debug session[:items_bought] %> 
+ <%= debug products_to_add.inspect %>-->
  
  <!--</header> 
        

@@ -1,8 +1,8 @@
 class StoreController < ApplicationController
   def index
     @items = Item.all
-    flash[:notice] = "The sale ends this weekend"
-  redirect_to @post
+    
+
   end
 
   def all_products
@@ -20,7 +20,19 @@ class StoreController < ApplicationController
   def contact
     @contacts = Contact.all
   end
-
+  
+  def add_to_cart
+    session[:items_bought] ||=[]
+    session[:items_bought] << params[:id].to_i
+    session[:items_bought].uniq!
+    redirect_to :back
+  end
+  
+  def clear_cart
+    session[:items_bought] = nil
+    redirect_to :back 
+  end
+  
   def about
    @abouts = About.all
   #@about = About.first
