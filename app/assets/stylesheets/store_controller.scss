@@ -36,43 +36,48 @@ body{
 
 #links a:link{
     display:block;
-    width: 100px;
+    width: 110px;
     text-align: center;
     font-size: 15px;
     padding: 10px;
     
-    color:#98BF21;
-    background-color: #7A991A;
+   // color:#98BF21;
+  //  background-color: #7A991A;
+  background: linear-gradient( #F0F5FF,#75A3FF);
 }
 #links a:hover{
-    background-color: #7A991A;
+   // background-color: $text-color;
+    
+    color: red;
 }
  
-
 
 #search{
     float:right;
     position:absolute;
-    top: 200px;
+    top: 50px;
     left: 800px;
 }
 
 #category_search{
     float:right;
     position: absolute;
-    top: 60px;
-    left:800px;
-   
+//top: 60px;
+  //  left:800px;
+  top:50px;
+  left: 1000px;
 }
 
 
 #container{
-    width: 1000px;
+    width: 1200px;
     height:  1200px;
     border: 1px black solid;
     border-radius: 25px;
-    background-color:#F2F2F2;
-   
+    //background-color:#F2F2F2;
+     background-color:#EBF5FF;
+    
+    box-shadow:  4px 4px 4px 4px rgb(2,3,2);
     margin-top: 40px;
     padding:5px;
     margin-left:auto;
@@ -83,6 +88,13 @@ h1{
     font-family:times new roman;
     font-size:80px;
     color: $text_color;
+}
+
+
+#clear{
+    position:absolute;
+    top: 600px;
+    left: 1040px;
 }
 
 #paginate{
@@ -101,13 +113,19 @@ h1{
     
 }
 #catanddog{
-     position:absolute;
+    position:absolute;
     top: 42px;
     right:100px;
     
 }
-
+#an_item{
+    box-shadow: 2px 2px 2px 2px rgb(2,3,2);
 }
+
+
+
+
+
 
 
   h2{
@@ -116,3 +134,13 @@ h1{
     color: $text_color;
   }
   
+ #purchases{
+    position:absolute;
+    border: solid $text_color 1px;
+    top:400px;
+    left:1040px;
+    color: $text_color;
+    font-size: small;
+ }
+ 
+}//container

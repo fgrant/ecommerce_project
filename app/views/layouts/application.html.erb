@@ -22,7 +22,7 @@
    <nav>
     <div id = "links">
      <ul> 
-       <li><a><%= link_to 'Home', root_path %>,</a></li> 
+       <li><%= link_to 'Home', root_path %></li> 
        <li><%= link_to 'Cats', cats_path %></li> 
        <li><%= link_to 'Dogs', dogs_path %></li> 
        <li><%= link_to 'Birds', birds_path %></li> 
@@ -33,7 +33,10 @@
        <li><%= link_to 'Contact', contact_path %></li> 
     </div>
    </nav>
+   
+   <div id = "clear"/>
    <%= link_to 'Clear Cart', clear_cart_path ,method: :post%>
+   </div>
    
    <div id = "category_search" >
    <p>Search For Products By Category</p>
@@ -57,7 +60,9 @@
 </br>
 </br>
 
+
 <div id="purchases">
+  <p>SHOPPING CART</p>
   <% products_to_add.each do |a_product|  %>
   <%= a_product.name %>
   </br>

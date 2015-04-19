@@ -65,6 +65,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    flash[:notice]= "The product has been saved"
+    redirect_to @item
   end
 
   def new
@@ -74,6 +76,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      flash[:notice]= "The product has been saved"
       redirect_to @item
     else
       render :new
