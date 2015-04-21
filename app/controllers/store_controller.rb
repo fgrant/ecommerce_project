@@ -51,8 +51,7 @@ class StoreController < ApplicationController
 
 
   def buy
-    @items = Item.where('category_id=2').order(name: :asc)
-    
+    @customers = Customer.all
   end
 
 
@@ -95,9 +94,7 @@ class StoreController < ApplicationController
   #
   @items = Item.where('name LIKE ?', '%' + params[:search_words] + '%').where('category_id LIKE ? ', params[:category_id]).order(name: :asc)
      
-    
-      
-  #  end
+  
       
   end
 

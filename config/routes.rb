@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'store_controller/about'
 
   get 'store_controller/cats'
+   get 'store_controller/buy'
 
   get 'store_controller/dogs'
 
@@ -72,7 +73,7 @@ Rails.application.routes.draw do
 
   get 'customers_controller/create'
   
-  
+
   # get 'items/show'
 
   # get 'items/new'
@@ -88,6 +89,7 @@ Rails.application.routes.draw do
   get 'new', to: 'store#new'
   get 'about', to: 'store#about'
   get 'contact', to: 'store#contact'
+  get 'buy', to: 'store#buy'
   
   post "add_to_cart/:id", to: 'store#add_to_cart', :as => 'add_to_cart'
   delete "remove_from_cart/:id", to: 'store#remove_from_cart', :as => 'remove_from_cart'

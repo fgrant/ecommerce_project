@@ -1,7 +1,4 @@
-
-
 <h1>Make A Purchase</h1>
-
 <header>
   <nav>
     <ul>
@@ -16,5 +13,4 @@
   </nav>
 </header>
 
-<%=render partial: "buy" %>
-
+<%= render @items %>
