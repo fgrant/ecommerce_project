@@ -1,3 +1,4 @@
+<h1>Products For Birds</h1>
 
 <header>
   <nav>
@@ -13,16 +14,4 @@
   </nav>
 </header>
 
-
-
-
-<% if @abouts.blank? %>
-  <h1>blank</h1>
-  
-  <%else %>
-<div id="about">   
-<h2 text-align="center">ABOUT</h1>
-<%=render partial: "about" %>
-</div>
-<% end %>
-
+<%= render @items %>

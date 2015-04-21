@@ -8,6 +8,35 @@ class StoreController < ApplicationController
   end
 
 
+ def contact
+    @contacts = Contact.all
+  end
+  
+  def add_to_cart
+    session[:items_bought] ||=[]
+    session[:items_bought] << params[:id].to_i
+    session[:items_bought].uniq!
+    redirect_to :back
+  end
+  
+   def remove_from_cart
+    session[:items_bought].delete(params[:id].to_i)
+    redirect_to :back
+  end
+  
+
+  
+  def clear_cart
+    session[:items_bought] = nil
+    redirect_to :back 
+  end
+  
+  def about
+   @abouts = About.all
+  #@about = About.first
+  end
+
+
   def all_abouts
     @abouts = About.all
   end
@@ -19,6 +48,13 @@ class StoreController < ApplicationController
   def about
     @abouts = About.all
   end
+
+
+  def buy
+    @items = Item.where('category_id=2').order(name: :asc)
+    
+  end
+
 
   def cats
     @items = Item.where('category_id=2').order(name: :asc)

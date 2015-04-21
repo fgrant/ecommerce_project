@@ -1,0 +1,26 @@
+<span id ="about">
+
+  
+
+
+<div id = "contact_and_about"
+
+<% @new_arr = @contacts.to_ary %>
+</br>
+<%  @new_arr.each do |value|%>
+<h2>CONTACT US</h2>
+PHONE:  <%= value.phone %>
+</br>
+ADDRESS:  <%= value.address %>
+</br>
+EMAIL:  <%= value.email %>
+</br>
+WEB:  <%= value.web %>
+</br>
+<% end %>
+</br>
+</div>
+
+  
+  
+</span>
