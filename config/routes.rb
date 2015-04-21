@@ -74,7 +74,7 @@ Rails.application.routes.draw do
   get 'customers_controller/create'
   
 
-  # get 'items/show'
+  # get 'items/show
 
   # get 'items/new'
 
@@ -89,7 +89,7 @@ Rails.application.routes.draw do
   get 'new', to: 'store#new'
   get 'about', to: 'store#about'
   get 'contact', to: 'store#contact'
-  get 'buy', to: 'store#buy'
+  get 'buy', to: 'customers#new'
   
   post "add_to_cart/:id", to: 'store#add_to_cart', :as => 'add_to_cart'
   delete "remove_from_cart/:id", to: 'store#remove_from_cart', :as => 'remove_from_cart'
@@ -99,30 +99,30 @@ Rails.application.routes.draw do
   match 'found_items' => 'store#found_items', :as => 'found_items', :via => :post
   match 'found_all_items' => 'store#found_all_items', :as => 'found_all_items', :via => :post
 
-  resources :items
+  #resources :items
 
   # routes for activeadmin
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: 'items#index'
-  resources :items
+ # resources :items
   # routes for customers
-  resource :items do
+  resources :items do
     get 'index'
-    # end
+     
 
     get 'items' => 'items#index'
 
     get 'items/:id' => 'items#show', as: 'item', id: /\d+/
-
     get 'items/new' => 'items#new', as: 'new_item'
+   
     post 'items' => 'items#create', as: 'create_item'
 
     get 'items/:id/edit' => 'items#edit', as: 'edit_item', id: /\d+/
     patch 'items/:id' => 'items#update', id: /\d+/
 
     delete 'items/:id' => 'items#destroy', as: 'delete_item', id: /\d+/
-
+end
     # resources :items, :except => :show
     # root :to => "items#index", :via => :get
     # match 'items/:id' => 'items#show', :as => 'item', :via => :get
@@ -131,9 +131,9 @@ Rails.application.routes.draw do
     # match 'search_results' => 'items#search_results', :as => 'search_results', :via => :post
 
     # routes for customers
-    resource :customers do
+    resources :customers do
       get 'index'
-    end
+    
 
     get 'customers' => 'customers#index'
 
@@ -146,11 +146,12 @@ Rails.application.routes.draw do
     patch 'customers/:id' => 'customers#update', id: /\d+/
 
     delete 'customers/:id' => 'customers#destroy', as: 'delete_customer', id: /\d+/
-
+end
     # routes for orders
-    resource :orders do
+    resources :orders do
       get 'index'
-    end
+    
+    
     get 'orders' => 'orders#index'
 
     get 'orders/:id' => 'orders#show', as: 'order', id: /\d+/
@@ -163,10 +164,12 @@ Rails.application.routes.draw do
 
     delete 'orders/:id' => 'orders#destroy', as: 'delete_order', id: /\d+/
 
+
+ end
     # routes for provinces
-    resource :provinces do
+    resources :provinces do
       get 'index'
-    end
+    
 
     get 'provinces' => 'provinces#index'
 
@@ -179,12 +182,13 @@ Rails.application.routes.draw do
     patch 'provinces/:id' => 'provinces#update', id: /\d+/
 
     delete 'provinces/:id' => 'provinces#destroy', as: 'delete_province', id: /\d+/
-
+     end
+    
     # routes for items purchased
     # routes for category
-    resource :items_purchased do
+    resources :items_purchased do
       get 'index'
-    end
+    
     get 'items_purchased' => 'items_purchased#index'
 
     get 'items_purchased/:id' => 'items_purchased#show', as: 'item_purchased', id: /\d+/
@@ -196,11 +200,12 @@ Rails.application.routes.draw do
     patch 'items_purchased/:id' => 'items_purchased#update', id: /\d+/
 
     delete 'items_purchased/:id' => 'items_purchased#destroy', as: 'delete_item_purchased', id: /\d+/
-
+  end
+  
     # routes for category
-    resource :categories do
+    resources :categories do
       get 'index'
-    end
+    
     get 'categories' => 'categories#index'
 
     get 'categories/:id' => 'categories#show', as: 'category', id: /\d+/
@@ -212,7 +217,7 @@ Rails.application.routes.draw do
     patch 'categories/:id' => 'categories#update', id: /\d+/
 
     delete 'categories/:id' => 'categories#destroy', as: 'delete_category', id: /\d+/
-
+end
     # get 'items/:id' => 'items#show' ,constraints: {id: /\d+/}, as: 'item'
 
     # get 'items/index'
@@ -282,11 +287,9 @@ Rails.application.routes.draw do
     #     # Directs /admin/products/* to Admin::ProductsController
     #     # (app/controllers/admin/products_controller.rb)
     #     resources :products
-    #   end
-  end
-end
+    #   en
 
-  
+  end
   
   
   
