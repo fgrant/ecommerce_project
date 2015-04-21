@@ -1,6 +1,7 @@
 <h1>Products For Small Animals</h1>
 <header>
   <nav>
+    <div id = "links">
     <ul>
       <li><%= link_to 'Home', root_path %></li>
       <li><%= link_to 'Cats', cats_path %></li>
@@ -11,6 +12,7 @@
       <li><%= link_to 'New Products', new_path %></li>
      
     </ul>
+    </div>
   </nav>
 </header>
 <%= render @items %>

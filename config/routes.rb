@@ -131,22 +131,22 @@ end
     # match 'search_results' => 'items#search_results', :as => 'search_results', :via => :post
 
     # routes for customers
-    resources :customers do
-      get 'index'
+    resources :customers # do
+    #  get 'index'
     
 
-    get 'customers' => 'customers#index'
+   # get 'customers' => 'customers#index'
 
-    get 'customers/:id' => 'customers#show', as: 'customer', id: /\d+/
+   # get 'customers/:id' => 'customers#show', as: 'customer', id: /\d+/
 
-    get 'customers/new' => 'customers#new', as: 'new_customer'
-    post 'customers' => 'customers#create', as: 'create_customer'
+  #  get 'customers/new' => 'customers#new', as: 'new_customer'
+   # post 'customers' => 'customers#create', as: 'create_customer'
 
-    get 'customers/:id/edit' => 'customers#edit', as: 'edit_customer', id: /\d+/
-    patch 'customers/:id' => 'customers#update', id: /\d+/
+  #  get 'customers/:id/edit' => 'customers#edit', as: 'edit_customer', id: /\d+/
+  #  patch 'customers/:id' => 'customers#update', id: /\d+/
 
-    delete 'customers/:id' => 'customers#destroy', as: 'delete_customer', id: /\d+/
-end
+  # delete 'customers/:id' => 'customers#destroy', as: 'delete_customer', id: /\d+/
+#end
     # routes for orders
     resources :orders do
       get 'index'

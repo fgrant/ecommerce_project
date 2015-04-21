@@ -12,7 +12,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = Customer.new(customer_params)
+    @customer = Customer.new(params[:calculate])
     if @customer.save
       redirect_to @customer
     else
@@ -41,6 +41,9 @@ class CustomersController < ApplicationController
     @customer.destroy
     redirect_to root_path
   end
+
+
+
 
   private
 
