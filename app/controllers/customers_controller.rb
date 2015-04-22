@@ -14,6 +14,8 @@ class CustomersController < ApplicationController
 
   def new
     @customer = Customer.new
+    @province = Province.all
+    
   end
 
   def create

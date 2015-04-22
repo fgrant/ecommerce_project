@@ -1,16 +1,26 @@
-
+<h1>INVOICE</h2>
 
   <%= render @customer %>
   
  <!-- <div id="purchases">-->
-  <p>INVOICE</p>
+  
   <% products_to_add.each do |a_product|  %>
+    <% a_product.save %>
   <%= a_product.name %>
-  </br>
+  
   <%= number_to_currency a_product.price %>
   </br>
-  <p>PST:</p>
-  <p>GST:</p>
-  <p>TOTAL:</p>
+  <% @prov = @customer.province_id %>
+  <% @a_prov = Province.find(@prov) %>
+ <!-- <% @province_name = @a_prov.prov_name %>-->
+  <% @pst = @a_prov.pst_rate * a_product.price %>
+  <% @gst = @a_prov.gst_rate *  a_product.price%>
+  <% @hst = @a_prov.hst_rate * a_product.price%>
+  
+  <p>PST:<%=  @pst%></p>
+  <p>GST:<%=  @gst %></p>
+  <p>HST:<%=  @hst %></p>
+  
+  <p>TOTAL:<%=@pst + @gst + @pst + a_product.price %></p>
 <% end %>
 <!--</div>-->

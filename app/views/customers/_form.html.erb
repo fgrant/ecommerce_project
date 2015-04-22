@@ -44,12 +44,16 @@
 <%= a_form.text_field :email %>
 </span>
 </br>
+<!--
 <span>
 <%= a_form.label :province_id %>
 </br>
 </span>
 <%= a_form.number_field :province_id %>
-</span>
+</span>-->
+
+<%= a_form.label :province_id %><br />
+   <%= a_form.collection_select :province_id, @province, :id, :prov_name %>
 </br>
 
 
