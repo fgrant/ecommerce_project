@@ -1,10 +1,10 @@
-c0
 
 
 
 
 
-lass OrdersController < ApplicationController
+
+Class OrdersController < ApplicationController
   def index
     @orders = Order.all
   end
@@ -26,6 +26,12 @@ lass OrdersController < ApplicationController
 
     end
   end
+  
+  
+  
+  
+  
+  
 
   def edit
     @order = Order.find(params[:id])
@@ -45,10 +51,20 @@ lass OrdersController < ApplicationController
     @order.destroy
     redirect_to root_path
   end
+  
+  
 
   private
 
   def order_params
     params.require(:order).permit(:status, :pst_rate, :gst_rate, :hst_rate, :customer_id)
   end
-end
+  
+  
+  
+  
+  
+  
+  
+ 
+  

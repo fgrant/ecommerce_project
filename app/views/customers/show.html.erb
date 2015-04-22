@@ -3,11 +3,17 @@
   <%= render @customer %>
   
  <!-- <div id="purchases">-->
-  
+ <% @gst_total = 0%>
+  <% @pst_total = 0%>
+  <% @hst_total = 0%>
+ <% @grand_total = 0 %>
+
   <% products_to_add.each do |a_product|  %>
-    <% a_product.save %>
+   <!-- <%  @order = a_product.save %>-->
+ 
   <%= a_product.name %>
   
+  <%= @the_id= a_product.id%>
   <%= number_to_currency a_product.price %>
   </br>
   <% @prov = @customer.province_id %>
@@ -16,11 +22,25 @@
   <% @pst = @a_prov.pst_rate * a_product.price %>
   <% @gst = @a_prov.gst_rate *  a_product.price%>
   <% @hst = @a_prov.hst_rate * a_product.price%>
+  <% @gst_total += @gst %>
+  <% @pst_total += @pst %>
+  <% @pst_total += @pst %>
+ 
+  <% @order = Order.create(item_purchased: @the_id.to_s, pst_rate: @pst,hst_rate: @gst, status:"not shipped", customer_id:@customer.id) %> 
   
-  <p>PST:<%=  @pst%></p>
+ 
+  
+  
+  <p>PST:<%=  @pst%> </p>
   <p>GST:<%=  @gst %></p>
   <p>HST:<%=  @hst %></p>
   
   <p>TOTAL:<%=@pst + @gst + @pst + a_product.price %></p>
+  <% @grand_total += (@pst + @gst + @pst + a_product.price)%>
 <% end %>
+
+ <p>TOTAL PST:<%=  @pst_total%></p>
+  <p>TOTAL GST:<%=  @pst_total%></p>
+   <p>TOTAL HST:<%=  @hst_total%></p>
+    <p>TOTAL OWING:<%=  @grand_total%></p>
 <!--</div>-->

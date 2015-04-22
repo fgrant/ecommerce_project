@@ -12,9 +12,7 @@ class ProvincesController < ApplicationController
   def search
   end
 
-  def search_results
-    @items = Item.where('name LIKE ?', "%#{params[:keywords]}%")
-  end
+  
 
   def show
     @province = Province.find(params[:id])
