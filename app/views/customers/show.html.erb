@@ -1,4 +1,16 @@
-<h1>CustomerController#show</h1>
-<p>Find me in app/views/customer_controller/show.html.erb</p>
+
 
   <%= render @customer %>
+  
+ <!-- <div id="purchases">-->
+  <p>INVOICE</p>
+  <% products_to_add.each do |a_product|  %>
+  <%= a_product.name %>
+  </br>
+  <%= number_to_currency a_product.price %>
+  </br>
+  <p>PST:</p>
+  <p>GST:</p>
+  <p>TOTAL:</p>
+<% end %>
+<!--</div>-->
