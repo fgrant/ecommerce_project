@@ -1,6 +1,7 @@
 class StoreController < ApplicationController
   def index
     @items = Item.all
+    
   end
 
   def all_products
@@ -16,11 +17,13 @@ class StoreController < ApplicationController
     session[:items_bought] ||=[]
     session[:items_bought] << params[:id].to_i
     session[:items_bought].uniq!
+    flash[:notice] = "You have added a product to your cart"
     redirect_to :back
   end
   
    def remove_from_cart
     session[:items_bought].delete(params[:id].to_i)
+    flash[:notice] = "You have cleared your cart"
     redirect_to :back
   end
   
@@ -51,12 +54,18 @@ class StoreController < ApplicationController
 
 
   def buy
-    @customers = Customer.all
+    
   end
 
 
   def cats
     @items = Item.where('category_id=2').order(name: :asc)
+   # if session[:num_hits]
+    #  @num_hits = session[:num_hits] + 1
+    #else
+    #  @num_times = 1
+    #end
+    #session[:num_hits] = @num_hits
   end
 
   def dogs

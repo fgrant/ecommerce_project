@@ -71,19 +71,8 @@
 <% end %>
 </div>
 
- <!--<%= debug session[:items_bought] %> 
- <%= debug products_to_add.inspect %>-->
- 
- <!--</header> 
-       
-     </ul> 
-   </nav> 
- </header> -->
-     <!--  <div id="container"> -->
-   <!-- <div id = "catdog"> <%= image_tag "dogcat.jpg" %> </div> 
-     
-  <h1>The Pampered Pet</h1> 
-  <div id = "catanddog"> <%= image_tag "dogcat.jpg" %> </div> --> 
+<%= flash[:notice] %>
+  
  <%= yield %> 
  
  

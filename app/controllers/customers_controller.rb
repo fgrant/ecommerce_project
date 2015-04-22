@@ -1,4 +1,12 @@
 class CustomersController < ApplicationController
+  
+  
+  private
+
+  def customer_params
+    params.require(:customer).permit(:f_name, :l_name, :address,  :city, :country, :postal_code, :email, :province_id)
+  end
+  
   def index
     @customers = Customer.all
   end
@@ -12,7 +20,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = Customer.new(params[:calculate])
+    @customer = Customer.new(customer_params)
     if @customer.save
       redirect_to @customer
     else
@@ -42,12 +50,13 @@ class CustomersController < ApplicationController
     redirect_to root_path
   end
 
-
-
-
+ 
   private
 
   def customer_params
-    params.require(:customer).permit(:f_name, :l_name, :address,  :city, :country, :postal_code, :email, :province_id, :outstanding_order)
+    params.require(:customer).permit(:f_name, :l_name, :address,  :city, :country, :postal_code, :email, :province_id)
   end
+
+
+  
 end

@@ -79,6 +79,10 @@ class ItemsController < ApplicationController
       render :new
 
     end
+    
+    
+    
+    
 
     def edit
       @item = Item.find(params[:id])
