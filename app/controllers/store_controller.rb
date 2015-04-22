@@ -60,12 +60,12 @@ class StoreController < ApplicationController
 
   def cats
     @items = Item.where('category_id=2').order(name: :asc)
-   # if session[:num_hits]
-    #  @num_hits = session[:num_hits] + 1
-    #else
-    #  @num_times = 1
-    #end
-    #session[:num_hits] = @num_hits
+    if session[:num_hits]
+      @num_hits = session[:num_hits] + 1
+    else
+      @num_hits = 1
+    end
+    session[:num_hits] = @num_hits
   end
 
   def dogs

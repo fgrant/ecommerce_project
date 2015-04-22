@@ -14,5 +14,7 @@
     </div>
   </nav>
 </header>-->
-<p> num <%= @num_hits %></p> 
+<% if @num_hits > 10 %>
+<p> You've made <%= @num_hits %> visits to the cat page; you should sign up for our frequent shoppers card</p> %>
+<% end %>
 <%= render @items %>

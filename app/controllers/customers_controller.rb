@@ -1,11 +1,8 @@
 class CustomersController < ApplicationController
   
   
-  private
-
-  def customer_params
-    params.require(:customer).permit(:f_name, :l_name, :address,  :city, :country, :postal_code, :email, :province_id)
-  end
+  
+  
   
   def index
     @customers = Customer.all
